@@ -13,7 +13,7 @@ namespace Mews.LocalizationBuilder.Git
             RepositoryOwner = repositoryOwner;
             Repository = repository;
             Client = new GitHubClient(new ProductHeaderValue("devops-pipeline"));
-	        Client.Credentials = new Credentials(accessToken);
+            Client.Credentials = new Credentials(accessToken);
         }
 
         public Task<GitHubCommit> GetCommit(string commitHash)
