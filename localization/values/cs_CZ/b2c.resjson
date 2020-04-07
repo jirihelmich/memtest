@@ -1,0 +1,10 @@
+{
+    "DoNotTranslateThisKeyEitherItsJustATest": "TOTO NEPŘEKLÁDEJTE, jde také o test.",
+    "KeyWithComment": "Tady by se mel zobrazit komentář.",
+    "_KeyWithComment.comment": "OrderedDict([(u'Comment', u'I am a comment')])",
+    "KeyWithScopes": "Klic s rozsahem platnosti.",
+    "_KeyWithScopes.comment": "OrderedDict([(u'Scopes', [u'Navigator', u'Operator'])])",
+    "KeyWithBoth": "Zmeneny klic s obojim.",
+    "_KeyWithBoth.comment": "OrderedDict([(u'Comment', u'Simple comment'), (u'Scopes', [u'Navigator', u'Operator'])])",
+    "KeyWithoutContext": "Klic bez kontextu."
+}

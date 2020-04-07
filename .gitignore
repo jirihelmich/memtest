@@ -1,0 +1,13 @@
+!.gitkeep
+!.gitignore
+!*.dll
+[Oo]bj
+[Bb]in
+*.user
+*.suo
+*.[Cc]ache
+*.bak
+.idea
+[Tt]humbs.db
+
+.vs

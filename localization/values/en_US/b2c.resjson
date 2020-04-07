@@ -1,0 +1,19 @@
+{
+    "DoNotTranslateThisKeyEitherItsJustATest": "DO NOT TRANSLATE THIS, it's just a test as well",
+    "KeyWithComment": "This one should display a comment",
+    "_KeyWithComment.meta": {
+      "Comment": "I am a comment"
+    },
+    "KeyWithScopes": "Key with scopes",
+    "_KeyWithScopes.meta": {
+      "Scopes": [ "Navigator", "Operator" ]
+    },
+    "KeyWithBoth": "Key with both",
+    "_KeyWithBoth.meta": {
+      "Comment": "Simple comment",
+      "Scopes": [ "Navigator", "Operator" ]
+    },
+    "KeyWithoutContext": "Key without a context",
+    "Salutation": "Hello {FirstName} {LastName}, have a nice day!",
+    "NewKey": "A new key"
+}
