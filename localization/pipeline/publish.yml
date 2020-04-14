@@ -1,0 +1,66 @@
+variables:
+  builderProjectFile: $(Build.SourcesDirectory)\localization\Builder\Builder.csproj
+  builderNuGetConfig: $(Build.SourcesDirectory)\localization\Builder\.nuget\NuGet.config
+  builderArtifact: 'localizationBuilder'
+  storageContainerUri: 'https://mewsapps.blob.core.windows.net/localization-test'
+  servicePrincipalTenantId: '7cd56cb3-fcdc-4eea-9bc9-a90f9636677d'
+  servicePrincipalClientId: 'e014327a-a929-4787-adac-c0cb7307dbab'
+  sourceLanguage: 'en-US'
+  repositoryOwner: 'MewsSystems'
+  repository: 'globalization'
+
+pr: none
+trigger:
+  batch: false
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - localization\
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job:
+  steps:
+  - task: DotNetCoreCLI@2
+    displayName: Restore packages
+    inputs:
+      command: restore
+      projects: $(builderProjectFile)
+      feedsToUse: 'config'
+      nugetConfigPath: $(builderNuGetConfig)
+
+  - task: DotNetCoreCLI@2
+    displayName: Publish the localization builder
+    inputs:
+      command: publish
+      arguments: '$(builderProjectFile) --output $(Build.ArtifactStagingDirectory)'
+      zipAfterPublish: false
+      publishWebProjects: false
+  
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Build.ArtifactStagingDirectory)'
+      artifactName: $(builderArtifact)
+  
+  - download: current
+    artifact: $(builderArtifact)
+
+  - task: CmdLine@2
+    displayName: Publish localization
+    inputs:
+      script:
+        dotnet $(Pipeline.Workspace)\$(builderArtifact)\Builder.dll `
+          --SourceLanguage $(sourceLanguage) `
+          --StorageContainerUri $(storageContainerUri) `
+          --ServicePrincipalTenantId $(servicePrincipalTenantId) `
+          --ServicePrincipalClientId $(servicePrincipalClientId) `
+          --ServicePrincipalClientSecret $(servicePrincipalClientSecret) `
+          --RepositoryOwner $(repositoryOwner) `
+          --Repository $(repository) `
+          --RepositoryAccessToken $(gitHubAccessToken) `
+          --Commit $(Build.SourceVersion) `
+          --DataDirectory $(Build.SourcesDirectory)\localization\values
