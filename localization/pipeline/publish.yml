@@ -1,6 +1,7 @@
 variables:
   builderProjectFile: $(Build.SourcesDirectory)\localization\Builder\Builder.csproj
   builderNuGetConfig: $(Build.SourcesDirectory)\localization\Builder\.nuget\NuGet.config
+  builderArtifact: 'localizationBuilder'
   storageContainerUri: 'https://mewsapps.blob.core.windows.net/localization-test'
   servicePrincipalTenantId: '7cd56cb3-fcdc-4eea-9bc9-a90f9636677d'
   servicePrincipalClientId: 'e014327a-a929-4787-adac-c0cb7307dbab'
@@ -40,16 +41,16 @@ jobs:
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: '$(Build.ArtifactStagingDirectory)'
-      artifactName: 'localizationBuilder'
+      artifactName: $(builderArtifact)
   
   - download: current
-    artifact: 'localizationBuilder'
+    artifact: $(builderArtifact)
 
   - task: CmdLine@2
     displayName: Publish localization
     inputs:
       script:
-        dotnet $(Pipeline.Workspace)\localizationBuilder\Builder.dll `
+        dotnet $(Pipeline.Workspace)\$(builderArtifact)\Builder.dll `
           --SourceLanguage $(sourceLanguage) `
           --StorageContainerUri $(storageContainerUri) `
           --ServicePrincipalTenantId $(servicePrincipalTenantId) `
