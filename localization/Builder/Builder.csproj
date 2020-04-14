@@ -14,7 +14,7 @@
       <PackageReference Include="CommandLineParser" Version="2.7.82" />
       <PackageReference Include="FuncSharp" Version="1.6.5" />
       <PackageReference Include="Mews.Analyzers" Version="1.3.7" />
-      <PackageReference Include="Mews.Library" Version="1.0.20200413.121517">
+      <PackageReference Include="Mews.Library" Version="1.0.20200414.115617">
         <NoWarn>NU1701</NoWarn>
       </PackageReference>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
