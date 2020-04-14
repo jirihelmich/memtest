@@ -35,7 +35,7 @@ jobs:
     inputs:
       command: publish
       arguments: '$(builderProjectFile) --output $(Build.ArtifactStagingDirectory)'
-      zipAfterPublish: False
+      zipAfterPublish: false
       publishWebProjects: false
   
   - task: PublishPipelineArtifact@1
