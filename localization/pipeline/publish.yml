@@ -1,5 +1,6 @@
 variables:
   builderProjectFile: $(Build.SourcesDirectory)\localization\Builder\Builder.csproj
+  builderNuGetConfig: $(Build.SourcesDirectory)\localization\Builder\.nuget\NuGet.config
   storageContainerUri: 'https://mewsapps.blob.core.windows.net/localization-test'
   servicePrincipalTenantId: '7cd56cb3-fcdc-4eea-9bc9-a90f9636677d'
   servicePrincipalClientId: 'e014327a-a929-4787-adac-c0cb7307dbab'
@@ -21,8 +22,17 @@ jobs:
 - job:
   steps:
   - task: DotNetCoreCLI@2
+    displayName: Restore packages
     inputs:
-      command: 'publish'
+      command: restore
+      projects: $(builderProjectFile)
+      feedsToUse: 'config'
+      nugetConfigPath: $(builderNuGetConfig)
+
+  - task: DotNetCoreCLI@2
+    displayName: Publish the localization builder
+    inputs:
+      command: publish
       arguments: '$(builderProjectFile) --output $(Build.ArtifactStagingDirectory)'
       zipAfterPublish: False
       publishWebProjects: false
@@ -36,6 +46,7 @@ jobs:
     artifact: 'localizationBuilder'
 
   - task: CmdLine@2
+    displayName: Publish localization
     inputs:
       script:
         dotnet $(Pipeline.Workspace)/localizationBuilder/LocalizationBuilder.dll `
