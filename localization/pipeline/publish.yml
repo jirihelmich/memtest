@@ -11,7 +11,10 @@ variables:
 
 pr: none
 trigger:
-  batch: false  
+  batch: false
+  branches:
+    include:
+    - master
   paths:
     include:
     - localization\
