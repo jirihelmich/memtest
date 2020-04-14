@@ -1,0 +1,51 @@
+variables:
+  builderProjectFile: $(Build.SourcesDirectory)\localization\Builder\Builder.csproj
+  storageContainerUri: 'https://mewsapps.blob.core.windows.net/localization-test'
+  servicePrincipalTenantId: '7cd56cb3-fcdc-4eea-9bc9-a90f9636677d'
+  servicePrincipalClientId: 'e014327a-a929-4787-adac-c0cb7307dbab'
+  sourceLanguage: 'en-US'
+  repositoryOwner: 'MewsSystems'
+  repository: 'globalization'
+
+pr: none
+trigger:
+  batch: false  
+  paths:
+    include:
+    - localization\
+
+pool:
+  vmImage: 'windows-latest'
+
+jobs:
+- job:
+  steps:
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'publish'
+      arguments: '$(builderProjectFile) --output $(Build.ArtifactStagingDirectory)'
+      zipAfterPublish: False
+      publishWebProjects: false
+  
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'localizationBuilder'
+  
+  - download: current
+    artifact: 'localizationBuilder'
+
+  - task: CmdLine@2
+    inputs:
+      script:
+        dotnet $(Pipeline.Workspace)/localizationBuilder/LocalizationBuilder.dll `
+          --SourceLanguage $(sourceLanguage) `
+          --StorageContainerUri $(storageContainerUri) `
+          --ServicePrincipalTenantId $(servicePrincipalTenantId) `
+          --ServicePrincipalClientId $(servicePrincipalClientId) `
+          --ServicePrincipalClientSecret $(servicePrincipalClientSecret) `
+          --RepositoryOwner $(repositoryOwner) `
+          --Repository $(repository) `
+          --RepositoryAccessToken $(gitHubAccessToken) `
+          --Commit $(Build.SourceVersion) `
+          --DataDirectory $(Build.SourcesDirectory)\localization\values
