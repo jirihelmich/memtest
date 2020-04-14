@@ -49,7 +49,7 @@ jobs:
     displayName: Publish localization
     inputs:
       script:
-        dotnet $(Pipeline.Workspace)\localizationBuilder\LocalizationBuilder.dll `
+        dotnet $(Pipeline.Workspace)\localizationBuilder\Builder.dll `
           --SourceLanguage $(sourceLanguage) `
           --StorageContainerUri $(storageContainerUri) `
           --ServicePrincipalTenantId $(servicePrincipalTenantId) `
