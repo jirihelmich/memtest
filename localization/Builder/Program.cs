@@ -16,7 +16,7 @@ namespace Mews.LocalizationBuilder
             });
         }
 
-        private static Try<Unit, IStrictEnumerable<Validation.Error>> Run(Options options)
+        private static ITry<Unit, IStrictEnumerable<Validation.Error>> Run(Options options)
         {
             return Try.Success<Unit, IStrictEnumerable<Validation.Error>>(Unit.Value);
         }
