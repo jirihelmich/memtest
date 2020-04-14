@@ -26,13 +26,13 @@ namespace Mews.LocalizationBuilder.Model
         public static Translation FromJson(string json, bool includeMetadata)
         {
             var jsonDocument = JObject.Parse(json);
-            var keys = GetKeys(jsonDocument, includeMetadata);
+            var keys = ParseKeys(jsonDocument, includeMetadata);
             var data = keys.ToDictionary(key => key.Name);
 
             return new Translation(data);
         }
 
-        private static IStrictEnumerable<Key> GetKeys(IDictionary<string, JToken> jsonDocument, bool includeMetadata)
+        private static IStrictEnumerable<Key> ParseKeys(IDictionary<string, JToken> jsonDocument, bool includeMetadata)
         {
             var keyNames = jsonDocument.Keys.Distinct(KeyName);
             var keys = keyNames.Select(name => CreateKey(name, jsonDocument, includeMetadata));

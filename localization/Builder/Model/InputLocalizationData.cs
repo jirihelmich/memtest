@@ -2,24 +2,25 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Mews.Linguistics;
 
 namespace Mews.LocalizationBuilder.Model
 {
     public sealed class InputLocalizationData
     {
-        private InputLocalizationData(IDictionary<string, Translation> data)
+        private InputLocalizationData(IDictionary<Language, Translation> data)
         {
-            Data = new Dictionary<string, Translation>(data);
+            Data = new Dictionary<Language, Translation>(data);
         }
 
-        public Dictionary<string, Translation> Data { get; }
+        public Dictionary<Language, Translation> Data { get; }
 
         public static InputLocalizationData Read(string valuePath, string sourceLanguage)
         {
             var languageDirectories = GetLanguageDirectories(valuePath);
             var data = languageDirectories.GroupBy(d => d.Language).ToDictionary(
                 g => g.Key,
-                g => ReadLanguageData(g.SelectMany(t => Directory.GetFiles(t.Path, "*.resjson")), includeMetadata: g.Key.SafeEquals(sourceLanguage))
+                g => ReadLanguageData(g.SelectMany(t => Directory.GetFiles(t.Path, "*.resjson")), includeMetadata: g.Key.Code.SafeEquals(sourceLanguage))
             );
 
             return new InputLocalizationData(data);
@@ -33,11 +34,11 @@ namespace Mews.LocalizationBuilder.Model
             return combined;
         }
 
-        private static IEnumerable<(string Language, string Path)> GetLanguageDirectories(string basePath)
+        private static IEnumerable<(Language Language, string Path)> GetLanguageDirectories(string basePath)
         {
             var directories = Directory.GetDirectories(basePath).Select(p => (FullPath: p, DirectoryName: Path.GetFileName(p)));
             return directories.Where(d => Regex.IsMatch(d.DirectoryName, "[a-z]{2}_[A-Z]{2}")).Select(d => (
-                Language: d.DirectoryName.Replace("_", "-"),
+                Language: Languages.GetByCode(d.DirectoryName.Replace("_", "-")).Get(),
                 Path: d.FullPath
             ));
         }
