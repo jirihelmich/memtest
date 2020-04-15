@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Mews.LocalizationBuilder.Dto
+namespace Mews.LocalizationBuilder.Storage
 {
     public sealed class LocalizationData
     {

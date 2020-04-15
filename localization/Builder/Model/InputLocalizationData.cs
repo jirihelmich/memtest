@@ -2,7 +2,9 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using FuncSharp;
 using Mews.Linguistics;
+using Mews.LocalizationBuilder.Storage;
 
 namespace Mews.LocalizationBuilder.Model
 {
@@ -12,7 +14,6 @@ namespace Mews.LocalizationBuilder.Model
         {
             Data = new Dictionary<Language, Translation>(data);
         }
-
         public Dictionary<Language, Translation> Data { get; }
 
         public static InputLocalizationData Read(string valuePath, string sourceLanguage)
@@ -24,6 +25,16 @@ namespace Mews.LocalizationBuilder.Model
             );
 
             return new InputLocalizationData(data);
+        }
+
+        public LocalizationData Serialize(string defaultLanguageCode)
+        {
+            var defaultLanguage = Data[Languages.GetByCode(defaultLanguageCode).Get()];
+            return new LocalizationData
+            {
+                Keys = defaultLanguage.SerializeKeys(),
+                Values = SerializeValues()
+            };
         }
 
         private static Translation ReadLanguageData(IEnumerable<string> filePaths, bool includeMetadata)
@@ -41,6 +52,14 @@ namespace Mews.LocalizationBuilder.Model
                 Language: Languages.GetByCode(d.DirectoryName.Replace("_", "-")).Get(),
                 Path: d.FullPath
             ));
+        }
+
+        private Dictionary<string, Dictionary<string, string>> SerializeValues()
+        {
+            return Data.ToDictionary(
+                p => p.Key.Code,
+                p => p.Value.SerializeTranslations()
+            );
         }
     }
 }
