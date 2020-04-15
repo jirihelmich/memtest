@@ -17,15 +17,15 @@ namespace Mews.LocalizationBuilder.Storage
 
         private BlobContainerClient Client { get; }
 
-        public IOption<Dto.VersionedLocalizationData> ReadCurrentVersion()
+        public IOption<VersionedLocalizationData> ReadCurrentVersion()
         {
             var manifest = ReadManifest();
             return manifest.FlatMap(m => Read(m.Current));
         }
 
-        public void Upload(Dto.VersionedLocalizationData data)
+        public void Upload(VersionedLocalizationData data)
         {
-            Upload(BlobPath(new Version(data.VersionData.Version)), JsonConvert.SerializeObject(data, Newtonsoft.Json.Formatting.Indented), overwrite: false);
+            Upload(BlobPath(new Version(data.VersionData.Version)), JsonConvert.SerializeObject(data, Formatting.Indented), overwrite: false);
         }
 
         public void Update(Manifest manifest)
@@ -43,9 +43,9 @@ namespace Mews.LocalizationBuilder.Storage
             return Read<Manifest>("manifest.json");
         }
 
-        private IOption<Dto.VersionedLocalizationData> Read(Version version)
+        private IOption<VersionedLocalizationData> Read(Version version)
         {
-            return Read<Dto.VersionedLocalizationData>(BlobPath(version));
+            return Read<VersionedLocalizationData>(BlobPath(version));
         }
 
         private IOption<T> Read<T>(string blobPath)

@@ -34,11 +34,11 @@ namespace Mews.LocalizationBuilder.Model
             return new Translation(data);
         }
 
-        public Dictionary<string, Dto.Key> SerializeKeys()
+        public Dictionary<string, Storage.Key> SerializeKeys()
         {
             return Data.ToDictionary(
                 p => p.Key,
-                p => new Dto.Key
+                p => new Storage.Key
                 {
                     Comment = p.Value.Metadata.Map(d => d.Comment).GetOrNull(),
                     Scopes = p.Value.Metadata.Map(d => d.Scopes).GetOrElse(KeyScopes.None),

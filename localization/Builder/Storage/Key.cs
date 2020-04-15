@@ -1,4 +1,4 @@
-﻿namespace Mews.LocalizationBuilder.Dto
+﻿namespace Mews.LocalizationBuilder.Storage
 {
     public sealed class Key
     {

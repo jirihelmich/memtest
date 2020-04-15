@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using FuncSharp;
 using Mews.Linguistics;
+using Mews.LocalizationBuilder.Storage;
 
 namespace Mews.LocalizationBuilder.Model
 {
@@ -26,10 +27,10 @@ namespace Mews.LocalizationBuilder.Model
             return new InputLocalizationData(data);
         }
 
-        public Dto.LocalizationData Serialize(string defaultLanguageCode)
+        public LocalizationData Serialize(string defaultLanguageCode)
         {
             var defaultLanguage = Data[Languages.GetByCode(defaultLanguageCode).Get()];
-            return new Dto.LocalizationData
+            return new LocalizationData
             {
                 Keys = defaultLanguage.SerializeKeys(),
                 Values = SerializeValues()

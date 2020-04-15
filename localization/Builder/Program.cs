@@ -38,15 +38,10 @@ namespace Mews.LocalizationBuilder
                 Try.Error<Unit, IStrictEnumerable<Validation.Error>>,
                 _ =>
                 {
-                    var updatedData = new Dto.VersionedLocalizationData
-                    {
-                        VersionData = new Dto.VersionData
-                        {
-                            Commit = options.Commit,
-                            Version = version.ToString()
-                        },
-                        Localization = localData.Serialize(options.SourceLanguage)
-                    };
+                    var updatedData = new VersionedLocalizationData(
+                        versionData: new VersionData(version, options.Commit),
+                        localization: localData.Serialize(options.SourceLanguage)
+                    );
 
                     storageClient.Upload(updatedData);
                     storageClient.Update(new Manifest(version, version));

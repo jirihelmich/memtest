@@ -1,11 +1,12 @@
 ﻿using System.Linq;
 using Mews.LocalizationBuilder.Model;
+using Mews.LocalizationBuilder.Storage;
 
 namespace Mews.LocalizationBuilder.Validation
 {
     public static class Validator
     {
-        public static IStrictEnumerable<Error> Validate(InputLocalizationData localData, Dto.VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
+        public static IStrictEnumerable<Error> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
         {
             var defaultLanguageLocalData = localData.Data.Single(p => p.Key.Code.SafeEquals(defaultLanguage)).Value;
             var errors = StrictEnumerable.CreateFlat(
@@ -15,7 +16,7 @@ namespace Mews.LocalizationBuilder.Validation
             return errors;
         }
 
-        private static IStrictEnumerable<Error> CheckKeyRemovals(Translation localDefaultLanguageData, Dto.VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
+        private static IStrictEnumerable<Error> CheckKeyRemovals(Translation localDefaultLanguageData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
         {
             var missingKeys = storageData.Localization.Keys.Keys.Except(localDefaultLanguageData.Data.Keys);
             var errors = missingKeys.Select(key => new Error($"Key '{key}' has been removed."));
