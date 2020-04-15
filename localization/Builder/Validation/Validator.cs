@@ -16,7 +16,7 @@ namespace Mews.LocalizationBuilder.Validation
 
             return errors.AsNonEmpty().Match(
                 Try.Error<Unit, INonEmptyEnumerable<Error>>,
-                _ => Try.Success<Unit, INonEmptyEnumerable<Error>>(Unit.Value)
+                Try.Success<Unit, INonEmptyEnumerable<Error>>
             );
         }
 

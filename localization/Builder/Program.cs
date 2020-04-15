@@ -34,7 +34,7 @@ namespace Mews.LocalizationBuilder
             var currentData = storageClient.ReadCurrentVersion();
             var validationResult = currentData.Match(
                 data => Validator.Validate(localData, data, options.Commit, options.SourceLanguage),
-                _ => Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>(Unit.Value)
+                Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>
             );
 
             if (validationResult.IsSuccess)
