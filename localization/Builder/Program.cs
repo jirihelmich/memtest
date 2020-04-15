@@ -49,7 +49,7 @@ namespace Mews.LocalizationBuilder
                     };
 
                     storageClient.Upload(updatedData);
-                    storageClient.Update(new Manifest { Latest = version, Current = version });
+                    storageClient.Update(new Manifest(version, version));
 
                     return Try.Success<Unit, IStrictEnumerable<Validation.Error>>(Unit.Value);
                 }

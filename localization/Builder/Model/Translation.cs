@@ -17,6 +17,8 @@ namespace Mews.LocalizationBuilder.Model
 
         private static Regex KeyNameRegex => new Regex(@"^_?([a-zA-Z0-9]+)\.?", RegexOptions.Compiled);
 
+        private static Regex PlaceholderRegex => new Regex(@"\{([a-zA-Z][a-zA-Z0-9]*)\}", RegexOptions.Compiled);
+
         public static Translation Combine(Translation first, Translation second)
         {
             var combinedData = first.Data.Concat(second.Data).ToDictionary(p => p.Key, p => p.Value);
@@ -30,6 +32,27 @@ namespace Mews.LocalizationBuilder.Model
             var data = keys.ToDictionary(key => key.Name);
 
             return new Translation(data);
+        }
+
+        public Dictionary<string, Dto.Key> SerializeKeys()
+        {
+            return Data.ToDictionary(
+                p => p.Key,
+                p => new Dto.Key
+                {
+                    Comment = p.Value.Metadata.Map(d => d.Comment).GetOrNull(),
+                    Scopes = p.Value.Metadata.Map(d => d.Scopes).GetOrElse(KeyScopes.None),
+                    Parameters = GetParameters(p.Value.Text)
+                }
+            );
+        }
+
+        public Dictionary<string, string> SerializeTranslations()
+        {
+            return Data.ToDictionary(
+                p => p.Key,
+                p => p.Value.Text
+            );
         }
 
         private static IStrictEnumerable<Key> ParseKeys(IDictionary<string, JToken> jsonDocument, bool includeMetadata)
@@ -57,6 +80,11 @@ namespace Mews.LocalizationBuilder.Model
         private static string KeyName(string jsonKey)
         {
             return KeyNameRegex.Match(jsonKey).Groups[1].Value;
+        }
+
+        private static IStrictEnumerable<string> GetParameters(string text)
+        {
+            return PlaceholderRegex.Matches(text).Select(m => m.Groups[1].Value).AsStrict();
         }
     }
 }

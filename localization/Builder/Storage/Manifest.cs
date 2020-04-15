@@ -5,9 +5,15 @@ namespace Mews.LocalizationBuilder.Storage
 {
     public sealed class Manifest
     {
-        public Version Latest { get; set; }
+        public Manifest(Version latest, Version current)
+        {
+            Latest = latest;
+            Current = current;
+        }
 
-        public Version Current { get; set; }
+        public Version Latest { get; }
+
+        public Version Current { get; }
 
         public string ToJson()
         {

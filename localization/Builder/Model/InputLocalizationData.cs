@@ -15,8 +15,6 @@ namespace Mews.LocalizationBuilder.Model
         }
         public Dictionary<Language, Translation> Data { get; }
 
-        private static Regex PlaceholderRegex => new Regex(@"\{([a-zA-Z][a-zA-Z0-9]*)\}", RegexOptions.Compiled);
-
         public static InputLocalizationData Read(string valuePath, string sourceLanguage)
         {
             var languageDirectories = GetLanguageDirectories(valuePath);
@@ -31,25 +29,10 @@ namespace Mews.LocalizationBuilder.Model
         public Dto.LocalizationData Serialize(string defaultLanguageCode)
         {
             var defaultLanguage = Data[Languages.GetByCode(defaultLanguageCode).Get()];
-
             return new Dto.LocalizationData
             {
-                Keys = defaultLanguage.Data.ToDictionary(
-                    p => p.Key,
-                    p => new Dto.Key
-                    {
-                        Comment = p.Value.Metadata.Map(d => d.Comment).GetOrNull(),
-                        Scopes = p.Value.Metadata.Map(d => d.Scopes).GetOrElse(KeyScopes.None),
-                        Parameters = GetParameters(p.Value.Text)
-                    }
-                ),
-                Values = Data.ToDictionary(
-                    p => p.Key.Code,
-                    p => p.Value.Data.ToDictionary(
-                        kp => kp.Key,
-                        kp => kp.Value.Text
-                    )
-                )
+                Keys = defaultLanguage.SerializeKeys(),
+                Values = SerializeValues()
             };
         }
 
@@ -70,9 +53,12 @@ namespace Mews.LocalizationBuilder.Model
             ));
         }
 
-        private static IStrictEnumerable<string> GetParameters(string text)
+        private Dictionary<string, Dictionary<string, string>> SerializeValues()
         {
-            return PlaceholderRegex.Matches(text).Select(m => m.Groups[1].Value).AsStrict();
+            return Data.ToDictionary(
+                p => p.Key.Code,
+                p => p.Value.SerializeTranslations()
+            );
         }
     }
 }
