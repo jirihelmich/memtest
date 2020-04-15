@@ -4,7 +4,7 @@ using System.Text;
 using Azure.Identity;
 using Azure.Storage.Blobs;
 using FuncSharp;
-using Newtonsoft.Json;
+using Mews.Json;
 
 namespace Mews.LocalizationBuilder.Storage
 {
@@ -25,7 +25,7 @@ namespace Mews.LocalizationBuilder.Storage
 
         public void Upload(VersionedLocalizationData data)
         {
-            Upload(BlobPath(new Version(data.VersionData.Version)), JsonConvert.SerializeObject(data, Formatting.Indented), overwrite: false);
+            Upload(BlobPath(new Version(data.VersionData.Version)), JsonSerializer.Serialize(data, escapeHtml: false, indent: true), overwrite: false);
         }
 
         public void Update(Manifest manifest)
@@ -57,20 +57,15 @@ namespace Mews.LocalizationBuilder.Storage
                 using (var reader = new StreamReader(downloadInfo.Content, Encoding.UTF8))
                 {
                     var json = reader.ReadToEnd();
-                    return JsonConvert.DeserializeObject<T>(json);
+                    return JsonSerializer.UnsafeDeserialize<T>(json);
                 }
             }).Success;
         }
 
         private void Upload(string blobPath, string data, bool overwrite)
         {
-            using (var stream = new MemoryStream())
-            using (var writer = new StreamWriter(stream, Encoding.UTF8))
+            using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(data)))
             {
-                writer.Write(data);
-                writer.Flush();
-                stream.Seek(0, SeekOrigin.Begin);
-
                 var blobClient = Client.GetBlobClient(blobPath);
                 blobClient.Upload(stream, overwrite);
             }

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FuncSharp;
 using Mews.LocalizationBuilder.Model;
 using Mews.LocalizationBuilder.Storage;
 
@@ -6,14 +7,17 @@ namespace Mews.LocalizationBuilder.Validation
 {
     public static class Validator
     {
-        public static IStrictEnumerable<Error> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
+        public static ITry<Unit, INonEmptyEnumerable<Error>> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
         {
             var defaultLanguageLocalData = localData.Data.Single(p => p.Key.Code.SafeEquals(defaultLanguage)).Value;
             var errors = StrictEnumerable.CreateFlat(
                 CheckKeyRemovals(defaultLanguageLocalData, storageData, commitHash, defaultLanguage)
             );
 
-            return errors;
+            return errors.AsNonEmpty().Match(
+                Try.Error<Unit, INonEmptyEnumerable<Error>>,
+                _ => Try.Success<Unit, INonEmptyEnumerable<Error>>(Unit.Value)
+            );
         }
 
         private static IStrictEnumerable<Error> CheckKeyRemovals(Translation localDefaultLanguageData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)

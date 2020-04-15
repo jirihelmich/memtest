@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;
+using Mews.Json;
 
 namespace Mews.LocalizationBuilder.Storage
 {
@@ -17,11 +17,11 @@ namespace Mews.LocalizationBuilder.Storage
 
         public string ToJson()
         {
-            return JsonConvert.SerializeObject(new
+            return JsonSerializer.Serialize(escapeHtml: false, indent: true, value: new
             {
                 Latest = Latest.ToString(),
                 Current = Current.ToString()
-            }, Formatting.Indented);
+            });
         }
     }
 }

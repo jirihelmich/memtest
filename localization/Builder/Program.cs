@@ -20,7 +20,7 @@ namespace Mews.LocalizationBuilder
             });
         }
 
-        private static ITry<Unit, IStrictEnumerable<Validation.Error>> Run(Options options)
+        private static ITry<Unit, INonEmptyEnumerable<Validation.Error>> Run(Options options)
         {
             var storageClient = new StorageClient(
                 containerUri: new Uri(options.StorageContainerUri),
@@ -29,32 +29,31 @@ namespace Mews.LocalizationBuilder
                 clientSecret: options.ServicePrincipalClientSecret
             );
 
-            var version = GetFreshVersion();
+            var version = GenerateFreshVersion(StaticDateTimeProvider.NowUtc);
             var localData = InputLocalizationData.Read(options.DataDirectory, options.SourceLanguage);
             var currentData = storageClient.ReadCurrentVersion();
-            var errors = currentData.FlatMap(data => Validator.Validate(localData, data, options.Commit, options.SourceLanguage).AsNonEmpty());
-
-            return errors.Match(
-                Try.Error<Unit, IStrictEnumerable<Validation.Error>>,
-                _ =>
-                {
-                    var updatedData = new VersionedLocalizationData(
-                        versionData: new VersionData(version, options.Commit),
-                        localization: localData.Serialize(options.SourceLanguage)
-                    );
-
-                    storageClient.Upload(updatedData);
-                    storageClient.Update(new Manifest(version, version));
-
-                    return Try.Success<Unit, IStrictEnumerable<Validation.Error>>(Unit.Value);
-                }
+            var validationResult = currentData.Match(
+                data => Validator.Validate(localData, data, options.Commit, options.SourceLanguage),
+                _ => Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>(Unit.Value)
             );
+
+            if (validationResult.IsSuccess)
+            {
+                var updatedData = new VersionedLocalizationData(
+                    versionData: new VersionData(version, options.Commit),
+                    localization: localData.Serialize(options.SourceLanguage)
+                );
+
+                storageClient.Upload(updatedData);
+                storageClient.Update(new Manifest(version, version));
+            }
+
+            return validationResult;
         }
 
-        private static Version GetFreshVersion()
+        private static Version GenerateFreshVersion(DateTime dateTime)
         {
-            var now = StaticDateTimeProvider.NowUtc;
-            return new Version($"{now.Year}{now.Month:D2}{now.Day:D2}.{now.Hour}.{now.Minute}.{now.Second}");
+            return new Version($"{dateTime.Year}{dateTime.Month:D2}{dateTime.Day:D2}.{dateTime.Hour}.{dateTime.Minute}.{dateTime.Second}");
         }
     }
 }
