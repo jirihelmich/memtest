@@ -17,7 +17,7 @@ trigger:
     - master
   paths:
     include:
-    - localization\
+    - localization/*
 
 pool:
   vmImage: 'windows-latest'
