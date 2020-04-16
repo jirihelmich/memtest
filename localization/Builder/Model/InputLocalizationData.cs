@@ -47,7 +47,8 @@ namespace Mews.LocalizationBuilder.Model
 
         private static IEnumerable<(Language Language, string Path)> GetLanguageDirectories(string basePath)
         {
-            var directories = Directory.GetDirectories(basePath).Select(p => (FullPath: p, DirectoryName: Path.GetFileName(p)));
+            var directories = Directory.Exists(basePath).ToTrueOption().Map(_ => Directory.GetDirectories(basePath).Select(p => (FullPath: p, DirectoryName: Path.GetFileName(p)))).Flatten();
+
             return directories.Where(d => Regex.IsMatch(d.DirectoryName, "[a-z]{2}_[A-Z]{2}")).Select(d => (
                 Language: Languages.GetByCode(d.DirectoryName.Replace("_", "-")).Get(),
                 Path: d.FullPath
