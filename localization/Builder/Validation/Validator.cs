@@ -7,17 +7,11 @@ namespace Mews.LocalizationBuilder.Validation
 {
     public static class Validator
     {
-        public static ITry<Unit, INonEmptyEnumerable<Error>> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string defaultLanguage)
+        public static IStrictEnumerable<Error> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string defaultLanguage)
         {
             var defaultLanguageLocalData = localData.Data.Single(p => p.Key.Code.SafeEquals(defaultLanguage)).Value;
-            var errors = StrictEnumerable.CreateFlat(
-                CheckKeyRemovals(defaultLanguageLocalData, storageData)
-            );
 
-            return errors.AsNonEmpty().Match(
-                Try.Error<Unit, INonEmptyEnumerable<Error>>,
-                Try.Success<Unit, INonEmptyEnumerable<Error>>
-            );
+            return CheckKeyRemovals(defaultLanguageLocalData, storageData);
         }
 
         private static IStrictEnumerable<Error> CheckKeyRemovals(Translation localDefaultLanguageData, VersionedLocalizationData storageData)

@@ -32,12 +32,9 @@ namespace Mews.LocalizationBuilder
             var version = GenerateFreshVersion(StaticDateTimeProvider.NowUtc);
             var localData = InputLocalizationData.Read(options.DataDirectory, options.SourceLanguage);
             var currentData = storageClient.ReadCurrentVersion();
-            var validationResult = currentData.Match(
-                data => Validator.Validate(localData, data, options.SourceLanguage),
-                Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>
-            );
+            var errors = currentData.FlatMap(data => Validator.Validate(localData, data, options.SourceLanguage).AsNonEmpty());
 
-            if (validationResult.IsSuccess)
+            if (errors.IsEmpty)
             {
                 var updatedData = new VersionedLocalizationData(
                     versionData: new VersionData(version, options.Commit),
@@ -48,7 +45,10 @@ namespace Mews.LocalizationBuilder
                 storageClient.Update(new Manifest(version, version));
             }
 
-            return validationResult;
+            return errors.Match(
+                Try.Error<Unit, INonEmptyEnumerable<Validation.Error>>,
+                Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>
+            );
         }
 
         private static Version GenerateFreshVersion(DateTime dateTime)
