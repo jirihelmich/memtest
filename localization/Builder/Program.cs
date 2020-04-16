@@ -33,7 +33,7 @@ namespace Mews.LocalizationBuilder
             var localData = InputLocalizationData.Read(options.DataDirectory, options.SourceLanguage);
             var currentData = storageClient.ReadCurrentVersion();
             var validationResult = currentData.Match(
-                data => Validator.Validate(localData, data, options.Commit, options.SourceLanguage),
+                data => Validator.Validate(localData, data, options.SourceLanguage),
                 Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>
             );
 

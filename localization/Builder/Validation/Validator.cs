@@ -7,11 +7,11 @@ namespace Mews.LocalizationBuilder.Validation
 {
     public static class Validator
     {
-        public static ITry<Unit, INonEmptyEnumerable<Error>> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
+        public static ITry<Unit, INonEmptyEnumerable<Error>> Validate(InputLocalizationData localData, VersionedLocalizationData storageData, string defaultLanguage)
         {
             var defaultLanguageLocalData = localData.Data.Single(p => p.Key.Code.SafeEquals(defaultLanguage)).Value;
             var errors = StrictEnumerable.CreateFlat(
-                CheckKeyRemovals(defaultLanguageLocalData, storageData, commitHash, defaultLanguage)
+                CheckKeyRemovals(defaultLanguageLocalData, storageData)
             );
 
             return errors.AsNonEmpty().Match(
@@ -20,7 +20,7 @@ namespace Mews.LocalizationBuilder.Validation
             );
         }
 
-        private static IStrictEnumerable<Error> CheckKeyRemovals(Translation localDefaultLanguageData, VersionedLocalizationData storageData, string commitHash, string defaultLanguage)
+        private static IStrictEnumerable<Error> CheckKeyRemovals(Translation localDefaultLanguageData, VersionedLocalizationData storageData)
         {
             var missingKeys = storageData.Localization.Keys.Keys.Except(localDefaultLanguageData.Data.Keys);
             var errors = missingKeys.Select(key => new Error($"Key '{key}' has been removed."));
