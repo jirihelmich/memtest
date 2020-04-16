@@ -2,6 +2,10 @@
 using System.Linq;
 using CommandLine;
 using FuncSharp;
+using Mews.LocalizationBuilder.Model;
+using Mews.LocalizationBuilder.Storage;
+using Mews.LocalizationBuilder.Validation;
+using Mews.Time;
 
 namespace Mews.LocalizationBuilder
 {
@@ -16,9 +20,40 @@ namespace Mews.LocalizationBuilder
             });
         }
 
-        private static ITry<Unit, IStrictEnumerable<Validation.Error>> Run(Options options)
+        private static ITry<Unit, INonEmptyEnumerable<Validation.Error>> Run(Options options)
         {
-            return Try.Success<Unit, IStrictEnumerable<Validation.Error>>(Unit.Value);
+            var storageClient = new StorageClient(
+                containerUri: new Uri(options.StorageContainerUri),
+                tenantId: options.ServicePrincipalTenantId,
+                clientId: options.ServicePrincipalClientId,
+                clientSecret: options.ServicePrincipalClientSecret
+            );
+
+            var version = GenerateFreshVersion(StaticDateTimeProvider.NowUtc);
+            var localData = InputLocalizationData.Read(options.DataDirectory, options.SourceLanguage);
+            var currentData = storageClient.ReadCurrentVersion();
+            var errors = currentData.FlatMap(data => Validator.Validate(localData, data, options.SourceLanguage).AsNonEmpty());
+
+            if (errors.IsEmpty)
+            {
+                var updatedData = new VersionedLocalizationData(
+                    versionData: new VersionData(version, options.Commit),
+                    localization: localData.Serialize(options.SourceLanguage)
+                );
+
+                storageClient.Upload(updatedData);
+                storageClient.Update(new Manifest(version, version));
+            }
+
+            return errors.Match(
+                Try.Error<Unit, INonEmptyEnumerable<Validation.Error>>,
+                Try.Success<Unit, INonEmptyEnumerable<Validation.Error>>
+            );
+        }
+
+        private static Version GenerateFreshVersion(DateTime dateTime)
+        {
+            return new Version($"{dateTime.Year}{dateTime.Month:D2}{dateTime.Day:D2}.{dateTime.Hour}.{dateTime.Minute}.{dateTime.Second}");
         }
     }
 }
