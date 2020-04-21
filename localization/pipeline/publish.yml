@@ -2,7 +2,7 @@ variables:
   builderProjectFile: $(Build.SourcesDirectory)\localization\Builder\Builder.csproj
   builderNuGetConfig: $(Build.SourcesDirectory)\localization\Builder\.nuget\NuGet.config
   builderArtifact: 'localizationBuilder'
-  storageContainerUri: 'https://mewsapps.blob.core.windows.net/localization-test'
+  storageContainerUri: 'https://mewsapps.blob.core.windows.net/localization'
   servicePrincipalTenantId: '7cd56cb3-fcdc-4eea-9bc9-a90f9636677d'
   servicePrincipalClientId: 'e014327a-a929-4787-adac-c0cb7307dbab'
   sourceLanguage: 'en-US'
