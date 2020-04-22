@@ -84,7 +84,7 @@ namespace Mews.LocalizationBuilder.Model
 
         private static IStrictEnumerable<string> GetParameters(string text)
         {
-            return PlaceholderRegex.Matches(text).Select(m => m.Groups[1].Value).AsStrict();
+            return PlaceholderRegex.Matches(text).Select(m => m.Groups[1].Value).Distinct().AsStrict();
         }
     }
 }
