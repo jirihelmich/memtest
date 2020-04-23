@@ -1546,7 +1546,7 @@
     "State": "状態",
     "StateProvince": "都道府県",
     "StayingAt": "にて宿泊",
-    "StepCountOfTotal": "タスク{count}番号{Total}",
+    "StepCountOfTotal": "タスク{count}番号{total}",
     "StillThereQuestion": "まだいますか？",
     "Street": "市区町村以下",
     "Subject": "題目",

@@ -3851,8 +3851,6 @@
     "TravelAgencyFallbackCode": "Terugvalcode van travel agency",
     "TravelAgencyIfPrepaid": "Travel agency wanneer vooruitbetaald",
     "TravelAgencyMultipleContractsErrorMessage": "Bedrijf kan maar één travel agency contract hebben.",
-    "TravelAgencyNumber": "Travel agency nummer",
-    "TravelAgencyNumberChangedSuccessMessage": "Travel agency nummer is aangepast",
     "TravelAgencyPlural": "Travel agencies",
     "TravelAgencyRatesQuotaExceeded": "Kan het maximale quotum van {quota} toegewezen tarieven voor één travel agency niet overschrijden.",
     "TravelAgencyVouchers": "Vouchers van travel agencies",

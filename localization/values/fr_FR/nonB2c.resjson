@@ -3856,8 +3856,6 @@
     "TravelAgencyFallbackCode": "Code de repli de l'agence de voyage",
     "TravelAgencyIfPrepaid": "Agence de voyage si prépayé",
     "TravelAgencyMultipleContractsErrorMessage": "Impossible d'avoir plusieurs contrats d'agences de voyages pour une société.",
-    "TravelAgencyNumber": "Numéro d'agence de voyage",
-    "TravelAgencyNumberChangedSuccessMessage": "Le numéro de l'agence de voyage a été changé avec succès.",
     "TravelAgencyPlural": "Agences de voyage",
     "TravelAgencyRatesQuotaExceeded": "Impossible de dépasser le quota maximum de {quota} tarifs assignés à une agence de voyage.",
     "TravelAgencyVouchers": "Vouchers de l’agence de voyage",

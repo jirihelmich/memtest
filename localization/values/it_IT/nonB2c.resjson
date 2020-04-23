@@ -3827,8 +3827,6 @@
     "TravelAgencyFallbackCode": "Codice alternativo agenzia di viaggio",
     "TravelAgencyIfPrepaid": "Agenzia di viaggio se prepagata",
     "TravelAgencyMultipleContractsErrorMessage": "Non è possibile avere più contratti di agenzie di viaggio per una sola compagnia.",
-    "TravelAgencyNumber": "Numero di agenzia di viaggio",
-    "TravelAgencyNumberChangedSuccessMessage": "Il numero dell'agenzia di viaggio è stato modificato con successo.",
     "TravelAgencyPlural": "Agenzie di viaggio",
     "TravelAgencyRatesQuotaExceeded": "Non può eccedere la quota massima di {quota} tariffe assegnate ad un' agenzia di viaggio.",
     "TravelAgencyVouchers": "I voucher dell'agenzia di viaggio",

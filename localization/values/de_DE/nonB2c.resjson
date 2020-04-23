@@ -3827,8 +3827,6 @@
     "TravelAgencyFallbackCode": "Reiseagentur-Rückgriffscode",
     "TravelAgencyIfPrepaid": "Reiseagentur bei Vorauszahlung",
     "TravelAgencyMultipleContractsErrorMessage": "Für eine Firma kann es nicht mehrere Reiseagentur-Verträge geben.",
-    "TravelAgencyNumber": "Reiseagentur-Nummer",
-    "TravelAgencyNumberChangedSuccessMessage": "Reiseagentur-Nummer erfolgreich geändert.",
     "TravelAgencyPlural": "Reiseagenturen",
     "TravelAgencyRatesQuotaExceeded": "Die maximale Quote von {quota} einer Reiseagentur zugeordneten Raten darf nicht überschritten werden.",
     "TravelAgencyVouchers": "Reiseagenturvoucher",
