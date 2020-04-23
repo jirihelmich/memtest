@@ -4,8 +4,6 @@
     {
         public KeyScopes Scopes { get; set; }
 
-        public IStrictEnumerable<string> Parameters { get; set; }
-
         public string Comment { get; set; }
     }
 }
