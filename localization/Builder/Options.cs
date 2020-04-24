@@ -33,5 +33,8 @@ namespace Mews.LocalizationBuilder
 
         [Option(nameof(DataDirectory), Required = true, HelpText = "Directory where per-language subdirectories with translation data are located.")]
         public string DataDirectory { get; set; }
+
+        [Option(nameof(AllowKeyRemoval), Required = true, HelpText = "Specifies whether removing keys is allowed.")]
+        public bool AllowKeyRemoval { get; set; }
     }
 }

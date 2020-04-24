@@ -63,4 +63,5 @@ jobs:
           --Repository $(repository) `
           --RepositoryAccessToken $(gitHubAccessToken) `
           --Commit $(Build.SourceVersion) `
-          --DataDirectory $(Build.SourcesDirectory)\localization\values
+          --DataDirectory $(Build.SourcesDirectory)\localization\values `
+          --AllowKeyRemoval $(allowKeyRemoval)

@@ -32,7 +32,7 @@ namespace Mews.LocalizationBuilder
             var version = GenerateFreshVersion(StaticDateTimeProvider.NowUtc);
             var localData = InputLocalizationData.Read(options.DataDirectory, options.SourceLanguage);
             var currentData = storageClient.ReadCurrentVersion();
-            var errors = currentData.FlatMap(data => Validator.Validate(localData, data, options.SourceLanguage).AsNonEmpty());
+            var errors = currentData.FlatMap(data => Validator.Validate(localData, data, options.SourceLanguage, options.AllowKeyRemoval).AsNonEmpty());
 
             if (errors.IsEmpty)
             {
