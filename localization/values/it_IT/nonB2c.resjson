@@ -3076,7 +3076,7 @@
     "ReservationInvalidPassportExpiryDate": "Il formato relativo alla data di scadenza del passaporto non è valido: '{passportExpiryDate}'. Per favore selezionane uno dai formati supportati: {formats}.",
     "ReservationInvalidReleaseDate": "Il formato della data relativa alla data di rilascio non è valido: '{releaseDate}'. Per favore selezionane uno dai formati supportati: {formats}.",
     "ReservationInvalidTitle": "Titolo invalido {title}.",
-    "ReservationInvalidTotalPrice": "Prezzo totale invalido '{price}'. Formatta il numero secondo la cultura {cultura}.",
+    "ReservationInvalidTotalPrice": "Prezzo totale invalido '{price}'. Formatta il numero secondo la cultura {culture}.",
     "ReservationKeepOldPrice": "Mantieni il prezzo precedente",
     "ReservationMakeOwner": "Rendilo proprietario",
     "ReservationNegativeTotalPrice": "Non è possibile avere un prezzo totale in negativo '{price}'.",

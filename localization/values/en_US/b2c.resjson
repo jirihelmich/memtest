@@ -4071,6 +4071,10 @@
     "_Issuer.meta": {
       "Scopes": [ "Billing" ]
     },
+    "IssuingCity": "Issuing city",
+    "_IssuingCity.meta": {
+      "Scopes": [ "Navigator", "Operator" ]
+    },
     "IssuingCountry": "Issuing country",
     "_IssuingCountry.meta": {
       "Scopes": [ "Navigator", "Operator" ]

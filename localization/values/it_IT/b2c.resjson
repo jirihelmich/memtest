@@ -1412,7 +1412,7 @@
     "RequestedCategory": "Categoria richiesta",
     "RequestSupport": "Richiedi assistenza",
     "RequiredFields": "Campi obbligatori",
-    "RequiredFieldTemplate": "{nome} è un campo obbligatorio",
+    "RequiredFieldTemplate": "{name} è un campo obbligatorio",
     "ReservationCanceled": "La prenotazione è stata cancellata o effettuata manualmente dalla struttura.",
     "ReservationCannotOnlineCheckIn": "Non è possibile effettuare il check-in online.",
     "ReservationCardCompanionSubmittedHeader": "Completa la tua scheda di registrazione",
