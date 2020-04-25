@@ -76,7 +76,12 @@ namespace Mews.LocalizationBuilder.Model
 
         private static string KeyName(string jsonKey)
         {
-            return KeyNameRegex.Match(jsonKey).Groups[1].Value;
+            // Would be much nicer with a regex, but that is terribly slow.
+            var isMetaKey = jsonKey.StartsWith("_");
+            return isMetaKey.Match(
+                t => jsonKey.Substring(1, jsonKey.IndexOf('.') - 1),
+                f => jsonKey
+            );
         }
     }
 }
