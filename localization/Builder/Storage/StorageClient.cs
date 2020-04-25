@@ -38,14 +38,14 @@ namespace Mews.LocalizationBuilder.Storage
             return $"{version}/data.json";
         }
 
-        private IOption<VersionedLocalizationData> Read(Version version)
-        {
-            return Read<VersionedLocalizationData>(BlobPath(version));
-        }
-
         private IOption<Manifest> ReadManifest()
         {
             return Read<Manifest>("manifest.json");
+        }
+
+        private IOption<VersionedLocalizationData> Read(Version version)
+        {
+            return Read<VersionedLocalizationData>(BlobPath(version));
         }
 
         private IOption<T> Read<T>(string blobPath)
