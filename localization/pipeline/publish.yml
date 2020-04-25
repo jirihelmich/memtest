@@ -7,7 +7,7 @@ variables:
   servicePrincipalClientId: 'e014327a-a929-4787-adac-c0cb7307dbab'
   sourceLanguage: 'en-US'
   repositoryOwner: 'MewsSystems'
-  repository: 'globalization'
+  repository: 'mews-globalization'
 
 pr: none
 trigger:
