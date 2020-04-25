@@ -53,7 +53,7 @@ namespace Mews.LocalizationBuilder
 
         private static Version GenerateFreshVersion(DateTime dateTime)
         {
-            return new Version($"{dateTime.Year}{dateTime.Month:D2}{dateTime.Day:D2}.{dateTime.Hour}.{dateTime.Minute}.{dateTime.Second}");
+            return new Version($"{dateTime.Year}{dateTime.Month:D2}{dateTime.Day:D2}.1{dateTime.Hour:D2}.1{dateTime.Minute:D2}.1{dateTime.Second:D2}");
         }
     }
 }
