@@ -1,3 +1,3 @@
 # Mews globalization
 
-This repository is planned to manage all globalization data.
+This repository is planned to hold all globalization data.
