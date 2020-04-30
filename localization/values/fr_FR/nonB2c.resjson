@@ -2140,7 +2140,6 @@
     "MailTypeFtpExportFailed": "Echec de l'exportation FTP",
     "MailTypeFtpExportFinished": "Exportation FTP terminée",
     "MailTypeIntegrationClientAdded": "Client de l'intégration ajouté",
-    "MailTypeInvalidRate": "Tarif invalide",
     "MailTypeInvalidScrapedEnterpriseId": "Identifiant entreprise référencée invalide",
     "MailTypeJobResultReport": "Rapport Résultats du travail",
     "MailTypeMagicLink": "Lien Magique",

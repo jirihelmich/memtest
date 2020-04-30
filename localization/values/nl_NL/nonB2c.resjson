@@ -2137,7 +2137,6 @@
     "MailTypeFtpExportFailed": "Ftp export is mislukt",
     "MailTypeFtpExportFinished": "Ftp export is klaar",
     "MailTypeIntegrationClientAdded": "Integratie klant toegevoegd",
-    "MailTypeInvalidRate": "Ongeldig tarief",
     "MailTypeInvalidScrapedEnterpriseId": "Ongeldige gescrapet onderneming ID",
     "MailTypeJobResultReport": "Job resultaat rapport",
     "MailTypeMagicLink": "Magische link",

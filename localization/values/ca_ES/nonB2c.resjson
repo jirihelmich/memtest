@@ -2137,7 +2137,6 @@
     "MailTypeFtpExportFailed": "L'exportació Ftp ha fallat",
     "MailTypeFtpExportFinished": "Exportació Ftp finalitzada.",
     "MailTypeIntegrationClientAdded": "Client de la integració afegit",
-    "MailTypeInvalidRate": "La tarifa no és vàlida",
     "MailTypeInvalidScrapedEnterpriseId": "Invalid scraped enterprise id",
     "MailTypeJobResultReport": "Informe de resultats del treball",
     "MailTypeMagicLink": "Enllaç màgic",

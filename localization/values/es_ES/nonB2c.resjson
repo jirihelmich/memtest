@@ -2137,7 +2137,6 @@
     "MailTypeFtpExportFailed": "El exporte Ftp ha fallado",
     "MailTypeFtpExportFinished": "El exporte Ftp ha finalizado.",
     "MailTypeIntegrationClientAdded": "Cliente de integración añadido",
-    "MailTypeInvalidRate": "La tarifa no es válida",
     "MailTypeInvalidScrapedEnterpriseId": "El identificador del conjunto de datos de la competencia no es válido",
     "MailTypeJobResultReport": "Informe de resultados de trabajo",
     "MailTypeMagicLink": "Enlace mágico",

@@ -4279,7 +4279,7 @@
     "_MailChannelManagerPrimaryTravelAgencyCodeExplanation.meta": {
       "Scopes": [ "Mail" ]
     },
-    "MailChannelManagerPrimaryTravelAgencyExplanation": "IATA {iATA}",
+    "MailChannelManagerPrimaryTravelAgencyExplanation": "IATA {iata}",
     "_MailChannelManagerPrimaryTravelAgencyExplanation.meta": {
       "Scopes": [ "Mail" ]
     },

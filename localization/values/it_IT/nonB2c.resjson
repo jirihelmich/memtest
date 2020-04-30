@@ -2119,7 +2119,6 @@
     "MailTypeFtpExportFailed": "Export FTP fallita",
     "MailTypeFtpExportFinished": "Export Ftp terminato.",
     "MailTypeIntegrationClientAdded": "Aggiunto il client di integrazione",
-    "MailTypeInvalidRate": "Tasso invalido",
     "MailTypeInvalidScrapedEnterpriseId": "Identificatore di competitor invalido",
     "MailTypeJobResultReport": "Report del risultato del lavoro",
     "MailTypeMagicLink": "Link Magico",
