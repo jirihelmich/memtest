@@ -535,6 +535,10 @@
     "_ChannelManagerNotificationTypeExplanationProcessingGroupWithDuplicateNights.meta": {
       "Scopes": [ "Mail" ]
     },
+    "ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes": "We received reservation with night or product with gross price where is applied flat tax. Please verify if reservations is properly priced.",
+    "_ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes.meta": {
+      "Scopes": [ "Mail" ]
+    },
     "ChannelManagerNotificationTypeExplanationProcessingGroupWithItemInThePast": "Processing this group was not possible, as some of the nights are in the past, and Mews can only accept bookings with a future arrival date.",
     "_ChannelManagerNotificationTypeExplanationProcessingGroupWithItemInThePast.meta": {
       "Scopes": [ "Mail" ]
@@ -585,6 +589,10 @@
     },
     "ChannelManagerNotificationTypeSubjectProcessingGroupWithDuplicateNights": "Some reservation has duplicate nights",
     "_ChannelManagerNotificationTypeSubjectProcessingGroupWithDuplicateNights.meta": {
+      "Scopes": [ "Mail" ]
+    },
+    "ChannelManagerNotificationTypeSubjectProcessingGroupWithFlatTaxes": "Some reservation has items in gross prices with flat taxes.",
+    "_ChannelManagerNotificationTypeSubjectProcessingGroupWithFlatTaxes.meta": {
       "Scopes": [ "Mail" ]
     },
     "ChannelManagerNotificationTypeSubjectProcessingGroupWithItemInThePast": "Some reservation contains nights or orders in the past",
@@ -4871,7 +4879,7 @@
     "_NewPassword.meta": {
       "Scopes": [ "Navigator" ]
     },
-    "NewPasswordCheck": "New password again",
+    "NewPasswordCheck": "Confirm new password",
     "_NewPasswordCheck.meta": {
       "Scopes": [ "Navigator" ]
     },

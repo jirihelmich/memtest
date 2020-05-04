@@ -1403,7 +1403,7 @@
     "PaymentGatewayAccountPlural": "Účty platební brány",
     "PaymentGatewayId": "ID platební brány",
     "PaymentGatewayInaccessibleErrorMessage": "Sít' je dočasně nedostupná, zkuste to prosím později.",
-    "PaymentGatewayIntegration": "Inegrace platební bránz",
+    "PaymentGatewayIntegration": "Integrace platební brány",
     "PaymentGatewayQueueItem": "Čekající položka platební brány",
     "PaymentGatewayQueueItemPlural": "Čekající položky platební brány",
     "PaymentGatewayType": "Typ platební brány",
