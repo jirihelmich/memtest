@@ -5375,6 +5375,10 @@
     "_PayNow.meta": {
       "Scopes": [ "Navigator" ]
     },
+    "PayWith": "Pay with",
+    "_PayWith.meta": {
+      "Scopes": [ "Navigator" ]
+    },
     "Pending": "Pending",
     "_Pending.meta": {
       "Scopes": [ "Navigator" ]
@@ -5501,7 +5505,7 @@
     },
     "PriceLabel": "Price",
     "_PriceLabel.meta": {
-      "Scopes": [ "Navigator" ]
+      "Scopes": [ "Navigator", "Distributor" ]
     },
     "PrintCount": "Print count",
     "_PrintCount.meta": {
@@ -6557,6 +6561,10 @@
     },
     "Subject": "Subject",
     "_Subject.meta": {
+      "Scopes": [ "Navigator" ]
+    },
+    "Submit": "Submit",
+    "_Submit.meta": {
       "Scopes": [ "Navigator" ]
     },
     "SubTotal": "Subtotal",
