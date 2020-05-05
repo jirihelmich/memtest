@@ -1529,6 +1529,7 @@
     "Fail": "Fail",
     "Failed": "Failed",
     "FailedToMergeCustomersErrorMessage": "Cannot merge customers.",
+    "FailedToUpdatePaymentGatewayAccount": "Failed to update payment gateway account.",
     "Failure": "Failure",
     "FallBack": "Fallback",
     "FeatureNotSupportedByBrowser": "Feature not supported on this browser.",
