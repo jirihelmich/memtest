@@ -4499,6 +4499,14 @@
     "_MailPaymentAuthorizationSubject.meta": {
       "Scopes": [ "Mail" ]
     },
+    "MailPaymentRequestAddedSubject": "Pending payment at {enterpriseName}",
+    "_MailPaymentRequestAddedSubject.meta": {
+      "Scopes": [ "Mail" ]
+    },
+    "MailPendingPayment": "You've got a pending payment at",
+    "_MailPendingPayment.meta": {
+      "Scopes": [ "Mail" ]
+    },
     "MailPreauthorizationSuccessBody": "<p> Dear {titlePrefix} {name}, </p> <p> The following preauthorization transaction was made at {enterpriseName}. {merchantNote} </p> <p> Please note that the above transaction is not an actual charge, but just a temporary holding of the funds. </p> <p> {detailsHtml} </p> <p> Kind regards,<br/> {enterpriseName} </p>",
     "_MailPreauthorizationSuccessBody.meta": {
       "Scopes": [ "Mail" ]
@@ -5202,6 +5210,10 @@
     "Pay": "Pay",
     "_Pay.meta": {
       "Scopes": [ "Navigator" ]
+    },
+    "PayBefore": "Pay before",
+    "_PayBefore.meta": {
+      "Scopes": [ "Mail" ]
     },
     "Payment": "Payment",
     "_Payment.meta": {
@@ -6650,6 +6662,10 @@
     "TermsConditions": "Terms and conditions",
     "_TermsConditions.meta": {
       "Scopes": [ "Navigator" ]
+    },
+    "ThanksInAdvance": "Thanks in advance",
+    "_ThanksInAdvance.meta": {
+      "Scopes": [ "Mail" ]
     },
     "ThanksProfile": "Profile successfully updated. Thank you!",
     "_ThanksProfile.meta": {
