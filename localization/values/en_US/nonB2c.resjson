@@ -3594,6 +3594,7 @@
     "SouthernEurope": "Southern Europe",
     "Space": "Space",
     "SpaceAllocationResultMessage": "Number of unlocked reservations moved: {count}.",
+    "SpaceAssignedToReservationRemoveCategoryErrorMessage": "Cannot remove a category from a space that is assigned to any reservation.",
     "SpaceAssignment": "Space assignment",
     "SpaceBlock": "Space block",
     "SpaceBlockCannotModifyInPastErrorMessage": "Cannot modify block in the past.",
