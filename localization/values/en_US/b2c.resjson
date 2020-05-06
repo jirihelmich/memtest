@@ -535,7 +535,7 @@
     "_ChannelManagerNotificationTypeExplanationProcessingGroupWithDuplicateNights.meta": {
       "Scopes": [ "Mail" ]
     },
-    "ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes": "We received reservation with night or product with gross price where is applied flat tax. Please verify if reservations is properly priced.",
+    "ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes": "Reservation {channelManagerGroupCode} sent from {channelManager} with price in gross. Your property has a flat tax which was applied to the nights or products of this reservation based on the net price. Please verify whether taxes were applied correctly to the reservation.",
     "_ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes.meta": {
       "Scopes": [ "Mail" ]
     },
