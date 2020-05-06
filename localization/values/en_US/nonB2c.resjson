@@ -3377,6 +3377,7 @@
     "RoutingRule": "Routing rule",
     "RoutingRulePlural": "Routing rules",
     "RuleAction": "Rule action",
+    "RuleActionDependencyDeleteErrorMessage": "This entity cannot be deleted, because one or more rule actions depend on it.",
     "RuleActionPlural": "Rule actions",
     "SageExportIntegration": "Sage integration",
     "SageExportIntegrationDescription": "Enabling a Sage export integration allows to create and export schedule of your account report in a specifc format which Sage accepts.",
