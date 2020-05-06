@@ -166,6 +166,7 @@
     "AdyenIntegration": "Adyen direct integration",
     "AdyenIntegrationDescription": "Mews Merchant, powered by Adyen allows you to securely process payments with the click of a button inside Mews commander.",
     "AdyenMarketPayAccountUpdateFailed": "Adyen MarketPay subaccount cannot be updated.",
+    "AdyenMarketPayAccountUpdateFailedDetailed": "Adyen MarketPay subaccount cannot be updated due to following issues: {errors}.",
     "AdyenPaymentGatewayAccount": "Adyen payment gateway account",
     "AdyenPaymentGatewayAccountPlural": "Adyen payment gateway accounts",
     "AdyenPaymentTerminalIntegration": "Adyen POS integration",
