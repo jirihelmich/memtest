@@ -1145,7 +1145,7 @@
     "DeleteAdditionalExpenseErrorMessage": "Cannot delete additional expense.",
     "DeleteCityErrorMessage": "Cannot delete city because enterprises {enterpriseNames} are located here.",
     "DeleteConfirmation": "Delete {entity}?",
-	"DeleteCompanyLinkedToRoutingRule": "Cannot delete a company that is linked to a routing rule.",
+	"DeleteCompanyLinkedToRoutingRuleErrorMessage": "Cannot delete a company that is linked to a routing rule.",
     "Deleted": "Deleted",
     "DeletedEntityUpdatedErrorMessage": "Cannot update deleted items.",
     "DeleteDepartmentWithEmployeesErrorMessage": "Cannot delete department because it has employees assigned.",
