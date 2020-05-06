@@ -6645,7 +6645,7 @@
     },
     "TaxIdentifierDetailed": "Tax identifier (VAT number, etc.)",
     "_TaxIdentifierDetailed.meta": {
-      "Scopes": [ "Navigator" ]
+      "Scopes": [ "Navigator", "Operator" ]
     },
     "TaxIncluded": "Tax included",
     "_TaxIncluded.meta": {
