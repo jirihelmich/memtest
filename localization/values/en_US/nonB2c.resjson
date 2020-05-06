@@ -2691,6 +2691,7 @@
     "PaymentWillBeTakenMessage": "Payment will be taken using supplied card details in accordance with terms and conditions of selected rates.",
     "PaymentWithoutAuthorizationErrorMessage": "Payment does not have any associated authorization.",
     "PayoutType": "Payout type",
+    "PayoutTypeChangeNotSupportedForAdyen": "Changing of payout type for Adyen is currently not supported.",
     "PayworksPaymentTerminalCreditCardContractErrorMessage": "Cannot enable integration. Your contract does not allow the combination of selected credit card types.",
     "PayworksPaymentTerminalIntegration": "Payworks payment integration",
     "PayworksPaymentTerminalIntegrationDescription": "Payworks allows users who utilize Mews Merchant in the UK, Ireland, France, Finland and US to accept payments via integrated payment terminals.",
