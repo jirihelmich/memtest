@@ -1924,6 +1924,7 @@
     "InvalidIntervalErrorMessage": "Invalid interval. Start cannot come after end.",
     "InvalidJobDataErrorMessage": "Invalid data.",
     "InvalidLegalEnvironmentErrorMessage": "Invalid legal environment.",
+    "InvalidMimeTypeErrorMessage": "This MIME type is not allowed.",
     "InvalidNumberErrorMessage": "Please provide number.",
     "InvalidOnlineCheckOutOptionEnabledErrorMessage": "Your legal environment doesn't allow online check-out to be enabled.",
     "InvalidOnlineCheckOutOptionsErrorMessage": "Enable automatic online check-out option can't be set without Enable online check-out option.",
