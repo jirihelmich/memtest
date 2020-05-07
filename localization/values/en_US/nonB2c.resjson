@@ -1791,6 +1791,7 @@
     "IdentityDocumentExpiration": "Identity document expiration",
     "IdentityDocumentExpirationErrorMessage": "Expiration date cannot come before issue date.",
     "IdentityDocumentIssueDate": "Identity document issue date",
+    "IdentityDocumentIssuingCity": "Identity document issuing city",
     "IdentityDocumentNotFoundSpanishErrorMessage": "Country information must be completed for customer's identity card or passport.",
     "IdentityDocumentNumber": "Identity document number",
     "IdentityVerificationFile": "Identity verification file",
