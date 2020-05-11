@@ -3908,6 +3908,7 @@
     "TravelAgentPlural": "Travel agents",
     "TrialPeriod": "Trial period",
     "TripAdvisorId": "Trip advisor ID",
+    "TripAdvisorIdErrorMessage": "Trip advisor ID has to be number.",
     "TripAdvisorIntegration": "TripAdvisor integration",
     "TripAdvisorIntegrationDescription": "Mews connects to TripAdvisor Pay Per Click campaign in order to send prices and availability from Mews to TripAdvisor.",
     "TripAdvisorRank": "TripAdvisor rank",
