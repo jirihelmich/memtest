@@ -2054,7 +2054,7 @@
     "KnowYourCustomerChecksResultFailure": "Failure",
     "KnowYourCustomerChecksResultSuccess": "Success",
     "KnowYourCustomerChecksResultPending": "Pending",
-    "KnowYourCustomerChecksResultNodDone":  "NotDone",
+    "KnowYourCustomerChecksResultCannotBeDone":  "Cannot be done",
     "KnowYourCustomerChecksTermsAndConditionsReview": "Terms and conditions review",
     "KnowYourCustomerChecksTermsAndConditionsReviewHint": "Terms and conditions review on web site to check for valid contacts and company details.",
     "KnowYourCustomerChecksWorldCheckScreening": "Worldcheck screening",
