@@ -535,7 +535,7 @@
     "_ChannelManagerNotificationTypeExplanationProcessingGroupWithDuplicateNights.meta": {
       "Scopes": [ "Mail" ]
     },
-    "ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes": "We received reservation with night or product with gross price where is applied flat tax. Please verify if reservations is properly priced.",
+    "ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes": "Reservation {channelManagerGroupCode} sent from {channelManager} with price in gross. Your property has a flat tax which was applied to the nights or products of this reservation based on the net price. Please verify whether taxes were applied correctly to the reservation.",
     "_ChannelManagerNotificationTypeExplanationProcessingGroupWithFlatTaxes.meta": {
       "Scopes": [ "Mail" ]
     },
@@ -4499,6 +4499,14 @@
     "_MailPaymentAuthorizationSubject.meta": {
       "Scopes": [ "Mail" ]
     },
+    "MailPaymentRequestAddedSubject": "Pending payment at {enterpriseName}",
+    "_MailPaymentRequestAddedSubject.meta": {
+      "Scopes": [ "Mail" ]
+    },
+    "MailPendingPayment": "You've got a pending payment at",
+    "_MailPendingPayment.meta": {
+      "Scopes": [ "Mail" ]
+    },
     "MailPreauthorizationSuccessBody": "<p> Dear {titlePrefix} {name}, </p> <p> The following preauthorization transaction was made at {enterpriseName}. {merchantNote} </p> <p> Please note that the above transaction is not an actual charge, but just a temporary holding of the funds. </p> <p> {detailsHtml} </p> <p> Kind regards,<br/> {enterpriseName} </p>",
     "_MailPreauthorizationSuccessBody.meta": {
       "Scopes": [ "Mail" ]
@@ -5203,6 +5211,10 @@
     "_Pay.meta": {
       "Scopes": [ "Navigator" ]
     },
+    "PayBefore": "Pay before",
+    "_PayBefore.meta": {
+      "Scopes": [ "Mail" ]
+    },
     "Payment": "Payment",
     "_Payment.meta": {
       "Scopes": [ "Distributor", "Billing" ]
@@ -5363,6 +5375,10 @@
     "_PayNow.meta": {
       "Scopes": [ "Navigator" ]
     },
+    "PayWith": "Pay with",
+    "_PayWith.meta": {
+      "Scopes": [ "Navigator" ]
+    },
     "Pending": "Pending",
     "_Pending.meta": {
       "Scopes": [ "Navigator" ]
@@ -5489,7 +5505,7 @@
     },
     "PriceLabel": "Price",
     "_PriceLabel.meta": {
-      "Scopes": [ "Navigator" ]
+      "Scopes": [ "Navigator", "Distributor" ]
     },
     "PrintCount": "Print count",
     "_PrintCount.meta": {
@@ -6547,6 +6563,10 @@
     "_Subject.meta": {
       "Scopes": [ "Navigator" ]
     },
+    "Submit": "Submit",
+    "_Submit.meta": {
+      "Scopes": [ "Navigator" ]
+    },
     "SubTotal": "Subtotal",
     "_SubTotal.meta": {
       "Scopes": [ "Navigator", "Operator" ]
@@ -6625,7 +6645,7 @@
     },
     "TaxIdentifierDetailed": "Tax identifier (VAT number, etc.)",
     "_TaxIdentifierDetailed.meta": {
-      "Scopes": [ "Navigator" ]
+      "Scopes": [ "Navigator", "Operator" ]
     },
     "TaxIncluded": "Tax included",
     "_TaxIncluded.meta": {
@@ -6650,6 +6670,10 @@
     "TermsConditions": "Terms and conditions",
     "_TermsConditions.meta": {
       "Scopes": [ "Navigator" ]
+    },
+    "ThanksInAdvance": "Thanks in advance",
+    "_ThanksInAdvance.meta": {
+      "Scopes": [ "Mail" ]
     },
     "ThanksProfile": "Profile successfully updated. Thank you!",
     "_ThanksProfile.meta": {
