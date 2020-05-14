@@ -1895,6 +1895,7 @@
     "Interchange": "Interchange",
     "IntercomUnavailableErrorMessage": "Intercom is only available in production environment.",
     "Internal": "Internal",
+    "InternalNote": "Internal note",
     "InternalInformation": "Internals",
     "InternationalBankAccountNumber": "IBAN",
     "Intersecting": "Intersecting",
