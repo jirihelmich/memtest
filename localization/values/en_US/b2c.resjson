@@ -4536,15 +4536,15 @@
       "Scopes": [ "Mail" ]
     },
     "MailReservationBeforeStartHeadline": "<h2>Make the most of your stay.</h2>",
-    "MailReservationBeforeStartHeadline.meta": {
+    "_MailReservationBeforeStartHeadline.meta": {
       "Scopes": [ "Mail" ]
     },
     "MailReservationBeforeStartParagraph": "<p> At {enterpriseName}, we're dedicated to your leisure. We know that there's nothing worse than filling out paperwork when you'd rather be relaxing, so we're here to make sure you start your stay out right.</p> <p> Add your personal info, choose who's sleeping where, and fill in travel document details now, so you won't have to when you arrive.</p>",
-    "MailReservationBeforeStartParagraph.meta": {
+    "_MailReservationBeforeStartParagraph.meta": {
       "Scopes": [ "Mail" ]
     },
     "MailReservationBeforeStartContent": "<p>{signInLink}</p> <h3>Need anything?</h3> <p>{chatLink}</p><p>Kind regards,<br/>{enterpriseName}</p> {addToAppleWalletLink}",
-    "MailReservationBeforeStartContent.meta": {
+    "_MailReservationBeforeStartContent.meta": {
       "Scopes": [ "Mail" ]
     },
     "MailReservationCancelBody": "<p>                Dear {titlePrefix} {name},            </p>            <p>                Your reservation at {enterpriseName} has been successfully canceled.                You can find a summary of the canceled order below:            </p>            {detailsHtml}            <p>                Wishing you a great day and we hope to welcome you on another occasion.            </p>            <p>                Kind regards,<br/>                {enterpriseName}            </p>",
