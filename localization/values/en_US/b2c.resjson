@@ -4535,11 +4535,11 @@
     "_MailReservationBeforeStartSubject.meta": {
       "Scopes": [ "Mail" ]
     },
-    "MailReservationBeforeStartHeadline": "<h2>Make the most of your stay.</h2>",
+    "MailReservationBeforeStartHeadline": "Make the most of your stay.",
     "_MailReservationBeforeStartHeadline.meta": {
       "Scopes": [ "Mail" ]
     },
-    "MailReservationBeforeStartParagraph": "<p> At {enterpriseName}, we're dedicated to your leisure. We know that there's nothing worse than filling out paperwork when you'd rather be relaxing, so we're here to make sure you start your stay out right.</p> <p> Add your personal info, choose who's sleeping where, and fill in travel document details now, so you won't have to when you arrive.</p>",
+    "MailReservationBeforeStartParagraph": "At {enterpriseName}, we're dedicated to your leisure. We know that there's nothing worse than filling out paperwork when you'd rather be relaxing, so we're here to make sure you start your stay out right.\\n\\nAdd your personal info, choose who's sleeping where, and fill in travel document details now, so you won't have to when you arrive.",
     "_MailReservationBeforeStartParagraph.meta": {
       "Scopes": [ "Mail" ]
     },
