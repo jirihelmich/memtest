@@ -2138,6 +2138,7 @@
     "MailTemplateTypeAfterEndHint": "Sent at the moment that guests have completed checkout.",
     "MailTemplateTypeAfterStart": "After start",
     "MailTemplateTypeAfterStartHint": "Sent at the moment that guests have completed check-in.",
+    "MailTemplateTypeBeforeStartHint": "Sent two days before arrival to offer online check-in.",
     "MailTemplateTypeBookerConfirmation": "Booker confirmation",
     "MailTemplateTypeBookerConfirmationHint": "Sent when guests have booked for someone else via Mews Distributor or sent optionally for manually created reservations.",
     "MailTemplateTypeCancellation": "Cancellation",
