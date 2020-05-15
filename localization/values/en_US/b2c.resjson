@@ -6584,7 +6584,7 @@
       "Scopes": [ "Distributor" ]
     },
     "SurchargeFeeCardMessage": "{paymentCardType} payments to properties in Australia and New Zealand are subject to a transaction fee which varies by property.",
-    "_SurchargeFeeMessage.meta": {
+    "SurchargeFeeCardMessage.meta": {
       "Scopes": [ "Navigator" ]
     },
     "TakePicture": "Take picture",
