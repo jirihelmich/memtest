@@ -1012,7 +1012,7 @@
     "MachineReadableZone": "Počítačovo snímateľná časť",
     "MailAfterEndReservationBody": "<p> Dobrý deň, {titlePrefix} {name}, </p><p> Srdečne vám ďakujeme, že ste sa ubytovali u nás {enterpriseName}. </p><p> Aby sme mohli v budúcnosti zlepšiť naše služby, radi by sme sa dozvedeli o vašom pobyte. </p><p> Zdieľajte svoje skúsenosti aj so svojimi priateľmi a známymi na sociálnych sieťach. </p><p> Podeľte sa o svoje názory. Budeme sa tešiť na vašu spätnú väzbu, ktorá nás posunie ďalej. Ako vždy, ak sa opäť ocitnete v meste, radi vás uvidíme! </p>{shareExperienceHtml}<p> S pozdravom <br/>{enterpriseName} </p>",
     "MailAfterEndReservationSubject": "{enterpriseName} - Zaujíma nás, ako sa vám u nás páčilo a v čom sa môžeme zlepšiť. Vaša spätná väzba je pre nás veľkým prínosom!",
-    "MailBillBody": "<p>Dobrý deň, {titlePrefix}{name},</p><p>V prílohe vám posielame kópiu účtu od {enterpriseName}. V prípade akýchkoľvek dotazov nás neváhajte kontaktovať na{enterpriseEmail}. </p><p> S pozdravom <br/>{enterpriseName}</p>",
+    "MailBillBody": "<p>Dobrý deň, {titlePrefix} {name},</p><p>V prílohe vám posielame kópiu účtu od {enterpriseName}. V prípade akýchkoľvek dotazov nás neváhajte kontaktovať na {enterpriseEmail}. </p><p> S pozdravom <br/>{enterpriseName}</p>",
     "MailBillSubject": "{bill} od {enterpriseName}",
     "MailBookerReservationNewBody": "<p>Dobrý deň, {titlePrefix}{name},</p><p> Ďakujeme vám za rezerváciu v {enterpriseName}! Zhrnutie podrobností o rezervácii nájdete tu: </p>{detailsHtml}<p> V prípade akýchkoľvek dotazov a zmien nás neváhajte kontaktovať na <strong>{enterpriseEmail}</strong>. </p><p>S pozdravom <br/>{enterpriseName}</p>",
     "MailBookerReservationNewSubject": "Vaša rezervácia v {enterpriseName}",
