@@ -695,20 +695,8 @@
     "_CheckOutAdjustmentInstructions.meta": {
       "Scopes": [ "Navigator" ]
     },
-    "CheckOutBeforeLeaveMessage": "Wait until you're ready to leave the room, then check out.",
-    "_CheckOutBeforeLeaveMessage.meta": {
-      "Scopes": [ "Navigator" ]
-    },
-    "CheckOutDoneComeBackMessage": "Come see us again the next time you're in {city}!",
-    "_CheckOutDoneComeBackMessage.meta": {
-      "Scopes": [ "Navigator" ]
-    },
     "CheckOutDoneMessage": "We'll check you out at {time} {todayTomorrow}.",
     "_CheckOutDoneMessage.meta": {
-      "Scopes": [ "Navigator" ]
-    },
-    "CheckOutDoneWishMessage": "We hope you've enjoyed your stay.",
-    "_CheckOutDoneWishMessage.meta": {
       "Scopes": [ "Navigator" ]
     },
     "CheckOutExtraOrderQuestion": "Any minibar items you should add to your bill?",
@@ -719,20 +707,8 @@
     "_CheckOutFrom.meta": {
       "Scopes": [ "Navigator" ]
     },
-    "CheckOutGatherYourBelongings": "Gather your things",
-    "_CheckOutGatherYourBelongings.meta": {
-      "Scopes": [ "Navigator" ]
-    },
-    "CheckOutGetReadyToLeave": "Prepare to go",
-    "_CheckOutGetReadyToLeave.meta": {
-      "Scopes": [ "Navigator" ]
-    },
     "CheckoutNoun": "Check-out",
     "_CheckoutNoun.meta": {
-      "Scopes": [ "Navigator" ]
-    },
-    "CheckOutNow": "Check out now",
-    "_CheckOutNow.meta": {
       "Scopes": [ "Navigator" ]
     },
     "CheckoutOn": "Check-out on",
@@ -741,10 +717,6 @@
     },
     "CheckOutOnline": "Check out online",
     "_CheckOutOnline.meta": {
-      "Scopes": [ "Navigator" ]
-    },
-    "CheckOutReadyToGoQuestion": "Ready?",
-    "_CheckOutReadyToGoQuestion.meta": {
       "Scopes": [ "Navigator" ]
     },
     "Child": "Child",
@@ -818,10 +790,6 @@
     "CollectPaymentInstructions": "To collect the payment, you can:",
     "_CollectPaymentInstructions.meta": {
       "Scopes": [ "Mail" ]
-    },
-    "CollectYourKeys": "Collect your keys",
-    "_CollectYourKeys.meta": {
-      "Scopes": [ "Navigator" ]
     },
     "CommentsOfOrder": "Order comments",
     "_CommentsOfOrder.meta": {
@@ -4567,6 +4535,18 @@
     "_MailReservationBeforeStartSubject.meta": {
       "Scopes": [ "Mail" ]
     },
+    "MailReservationBeforeStartHeadline": "Make the most of your stay.",
+    "_MailReservationBeforeStartHeadline.meta": {
+      "Scopes": [ "Mail" ]
+    },
+    "MailReservationBeforeStartParagraph": "At {enterpriseName}, we're dedicated to your leisure. We know that there's nothing worse than filling out paperwork when you'd rather be relaxing, so we're here to make sure you start your stay out right.\r\n\r\nAdd your personal info, choose who's sleeping where, and fill in travel document details now, so you won't have to when you arrive.",
+    "_MailReservationBeforeStartParagraph.meta": {
+      "Scopes": [ "Mail" ]
+    },
+    "MailReservationBeforeStartContent": "<p>{signInLink}</p> <h3>Need anything?</h3> <p>{chatLink}</p><p>Kind regards,<br/>{enterpriseName}</p> {addToAppleWalletLink}",
+    "_MailReservationBeforeStartContent.meta": {
+      "Scopes": [ "Mail" ]
+    },
     "MailReservationCancelBody": "<p>                Dear {titlePrefix} {name},            </p>            <p>                Your reservation at {enterpriseName} has been successfully canceled.                You can find a summary of the canceled order below:            </p>            {detailsHtml}            <p>                Wishing you a great day and we hope to welcome you on another occasion.            </p>            <p>                Kind regards,<br/>                {enterpriseName}            </p>",
     "_MailReservationCancelBody.meta": {
       "Scopes": [ "Mail" ]
@@ -5109,10 +5089,6 @@
     },
     "OnlineCheckInWelcomeMessage": "Complete your info now, so when you arrive at {enterpriseName}, your check-in will be quick and easy.",
     "_OnlineCheckInWelcomeMessage.meta": {
-      "Scopes": [ "Navigator" ]
-    },
-    "OnlineCheckOut": "Online check-out",
-    "_OnlineCheckOut.meta": {
       "Scopes": [ "Navigator" ]
     },
     "OnlineCheckOutNotSupportedExtraItemsMessage": "Sorry, your bill needs to be finalized before check-out. Please go to reception to take care of your bill.",
@@ -6619,6 +6595,10 @@
     "_SurchargeFeeMessage.meta": {
       "Scopes": [ "Distributor" ]
     },
+    "SurchargeFeeCardMessage": "{paymentCardType} payments to properties in Australia and New Zealand are subject to a transaction fee which varies by property.",
+    "_SurchargeFeeCardMessage.meta": {
+      "Scopes": [ "Navigator" ]
+    },
     "TakePicture": "Take picture",
     "_TakePicture.meta": {
       "Scopes": [ "Navigator" ]
@@ -6645,7 +6625,7 @@
     },
     "TaxIdentifierDetailed": "Tax identifier (VAT number, etc.)",
     "_TaxIdentifierDetailed.meta": {
-      "Scopes": [ "Navigator" ]
+      "Scopes": [ "Navigator", "Operator" ]
     },
     "TaxIncluded": "Tax included",
     "_TaxIncluded.meta": {
