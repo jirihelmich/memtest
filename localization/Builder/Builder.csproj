@@ -17,7 +17,7 @@
       <PackageReference Include="Mews.Library" Version="1.0.20200416.1153341">
         <NoWarn>NU1701</NoWarn>
       </PackageReference>
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
       <PackageReference Include="Octokit" Version="0.44.0" />
       <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
     </ItemGroup>
